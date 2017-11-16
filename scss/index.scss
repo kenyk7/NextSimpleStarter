@@ -1,0 +1,10 @@
+// Global scss
+@import 'config';
+@import "mixins/index";
+// Libraries
+@import 'normalize.css';
+// Local styles
+@import "base/index";
+@import "layout/index";
+@import "components/index";
+@import "pages/index";

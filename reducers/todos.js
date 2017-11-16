@@ -1,6 +1,12 @@
 import { ADD_TODO, REMOVE_TODO } from '../actions';
 
-export default function(state = [], action) {
+const initialState = [
+	{
+		text: 'Use Redux'
+	}
+]
+
+export default function (state = initialState, action) {
 	const { type, text, todo } = action;
 
 	switch (type) {

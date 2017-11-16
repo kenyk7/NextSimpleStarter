@@ -15,10 +15,19 @@
   },
   "scripts": {
     "dev": "node server",
-    "build": "next build",
+    "build": "next build && cp build/app.css static/styles/app.css",
     "start": "NODE_ENV=production node server"
   },
   "devDependencies": {
+    "autoprefixer": "7.1.5",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "node-sass": "^4.4.0",
+    "normalize.css": "^7.0.0",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-loader": "^2.0.7",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^6.0.6",
     "sw-precache-webpack-plugin": "^0.11.4"
   }
 }

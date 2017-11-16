@@ -1,10 +1,10 @@
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
-
+import stylesheet from '../scss/index.scss';
 export default class MyDocument extends Document {
 	render() {
 		return (
-			<html style={{ background: '#EEE', color: '#444' }}>
+			<html>
 				<Head>
 					<meta
 						name="viewport"
@@ -16,6 +16,18 @@ export default class MyDocument extends Document {
 						rel="stylesheet"
 						href="https://code.getmdl.io/1.3.0/material.deep_purple-blue.min.css"
 					/>
+					{process.env.NODE_ENV == 'production'
+						? <link
+							rel="stylesheet"
+							type="text/css"
+							href={`/static/styles/app.css?${this.props
+								.__NEXT_DATA__.buildId}`}
+						/>
+						: <style
+							dangerouslySetInnerHTML={{
+								__html: stylesheet
+							}}
+						/>}
 					<title>Todo App</title>
 				</Head>
 				<body>
