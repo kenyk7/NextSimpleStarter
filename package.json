@@ -15,7 +15,8 @@
   },
   "scripts": {
     "dev": "node server",
-    "build": "next build && cp build/app.css static/styles/app.css",
+    "copy": "mkdir -p static/styles && cp .next/app.css static/styles/app.css",
+    "build": "next build && npm run copy",
     "start": "NODE_ENV=production node server"
   },
   "devDependencies": {
