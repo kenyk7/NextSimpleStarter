@@ -1,4 +1,4 @@
-const { createServer } = require('http');
+const express = require('express');
 const path = require('path');
 const next = require('next');
 
@@ -9,13 +9,16 @@ const handle = app.getRequestHandler();
 const PORT = process.env.PORT || 3000;
 
 app.prepare().then(_ => {
-	const server = createServer((req, res) => {
-		if (req.url === '/sw.js') {
-			app.serveStatic(req, res, path.resolve('./static/sw.js'));
-		} else {
-			handle(req, res);
-		}
-	});
+	const server = express();
+
+  server.use('/_next/static', express.static(path.resolve('./.next/static')));
+
+  server.get('/sw.js', (req, res) => {
+    app.serveStatic(req, res, path.resolve('./static/sw.js'));
+  });
+  server.get('*', (req, res) => {
+    return handle(req, res);
+  });
 
 	server.listen(PORT, err => {
 		if (err) throw err;

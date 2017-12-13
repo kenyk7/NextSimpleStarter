@@ -28,7 +28,7 @@ class Index extends React.Component {
 				<div>
 					<Todo />
 				</div>
-
+				<div className="bg-parrallax"></div>
 			</div>
 		);
 	}
