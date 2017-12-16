@@ -4,6 +4,7 @@ const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
 module.exports = {
 	webpack: (config, { dev }) => {
+		// Css & Scss load
 		config.module.rules.push({
 			test: /\.(css|scss)/,
 			loader: 'emit-file-loader',
@@ -11,28 +12,29 @@ module.exports = {
 				name: 'dist/[path][name].[ext]',
 			}
 		});
-
-		// Image task to use images in component directory
+		// Fonts load
+		config.module.rules.push({
+      test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+      loader: 'url-loader',
+      options: {
+        limit: 10000,
+        outputPath: 'static/fonts/',
+        publicPath: '/_next/',
+        name: '[name].[hash:11].[ext]'
+      }
+		});
+		// Images load
     config.module.rules.push({
-      test: /\.(png|jpe?g|gif)$/i,
+      test: /\.(ico|gif|png|jpg|jpeg|svg|webp)$/,
       use: [
-        // using emit-file-loader just to shut up 'Cannot find module',
-        // it will make copy of image in component directory
-        {
-          loader: 'emit-file-loader',
-          options: {
-            name: 'dist/[path][name].[ext]'
-          }
-        },
-        // this will create image copy, that we will use,
         // output path - '/.next/static/longhash.png'
         // url - '/_next/static/longhash.png'
         {
           loader: 'url-loader',
           options: {
+          	limit: 1000,
             outputPath: 'static/',
             publicPath: '/_next/',
-            limit: 1000,
             name: '[name].[hash:11].[ext]'
           }
         },
@@ -59,6 +61,7 @@ module.exports = {
     });
 
 		if (!dev) {
+			// Scss & css loader: prod
 			config.module.rules.push({
 				test: /\.(css|scss)$/,
 				use: ExtractTextPlugin.extract({
@@ -95,9 +98,9 @@ module.exports = {
 					]
 				})
 			});
-
 			config.plugins.push(new ExtractTextPlugin('app.css'));
 		} else {
+			// Scss only loader: dev
 			config.module.rules.push({
 				test: /\.scss$/,
 				use: [
