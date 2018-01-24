@@ -3,6 +3,9 @@ import { ADD_TODO, REMOVE_TODO } from '../actions';
 const initialState = [
 	{
 		text: 'Redux initial store'
+	},
+	{
+		text: 'Redux initial store 2'
 	}
 ]
 

@@ -1,0 +1,21 @@
+// footer
+.footer-page{
+	background: $brand-dark;
+	color: #ccc;
+	// border-top: 1px solid #ccc;
+	padding: 20px 0 20px;
+	hr{
+		border-color: #ccc;
+	}
+}
+.footer-logo{
+	margin-bottom: 10px;
+}
+.footer-nav{
+	a{
+		font-size: 13px;
+		display: inline-block;
+		color: #ccc;
+		padding: 4px 20px 4px 0px;
+	}
+}

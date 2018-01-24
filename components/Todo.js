@@ -24,25 +24,20 @@ class Todo extends React.Component {
 		return (
 			<div className="mdl-card mdl-shadow--2dp">
 				<form onSubmit={this.addTodos}>
-					<div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<input
-							type="text"
-							value={this.state.text}
-							onInput={e => this.setState({ text: e.target.value })}
-							className="mdl-textfield__input"
-							id="input"
-						/>
-						<label className="mdl-textfield__label" htmlFor="input">
-							What must be done?
-						</label>
+					<div className="input-group mb-3">
+					  <input type="text"
+					  value={this.state.text}
+					  onInput={e => this.setState({ text: e.target.value })}
+					  className="form-control"
+					  placeholder="What must be done?"/>
 					</div>
 				</form>
-
-				<ul>
+				<ul className="list-group">
 					{this.props.todos.map((todo, i) => (
 						<TodoItem key={i} todo={todo} remove={this.removeTodo} />
 					))}
 				</ul>
+				<br/>
 			</div>
 		);
 	}

@@ -2,8 +2,7 @@
 @import 'config';
 @import "mixins/index";
 // Libraries
-// @import '~bootstrap/scss/bootstrap';
-@import 'normalize.css';
+@import '~bootstrap/scss/bootstrap';
 // Local styles
 @import "base/index";
 @import "layout/index";

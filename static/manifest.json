@@ -1,6 +1,6 @@
 {
-  "name": "App PWA",
-  "short_name": "App",
+  "name": "React SSR PWA",
+  "short_name": "React PWA",
   "icons": [
   	{
       "src": "favicons/android-chrome-192x192.png",

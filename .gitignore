@@ -3,3 +3,4 @@ node_modules/
 static/sw.js
 static/styles/app.css
 .next
+*-error.log

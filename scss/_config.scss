@@ -4,9 +4,16 @@ $imgs: '../static/images/';
 
 // Define colors
 // ------------------------------------------------
-$brand-primary: #330066;
-$brand-second: #000;
-$body-color: #000;
+$theme-colors: (
+  "primary": #42a692,
+  "facebook": #3b5998,
+  "twitter": #00b2ff
+);
+
+$brand-primary: #42a692;
+$brand-dark: #1b1d1e;
+$body-color: #333;
+$white-color: #fff;
 
 // Fonts
 // ------------------------------------------------

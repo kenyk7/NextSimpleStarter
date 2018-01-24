@@ -1,14 +1,13 @@
 
 export default ({ todo, remove }) => {
 	return (
-		<li style={{ listStyle: 'none' }}>
+		<li className="list-group-item d-flex justify-content-between align-items-cente">
+			{todo.text}
 			<button
-				className="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect"
-				onClick={_ => remove(todo)}
-				style={{ fontSize: 12 }}
-			>
+				className="btn btn-danger btn-sm"
+				onClick={_ => remove(todo)}>
 				x
-			</button> {' '} {todo.text}
+			</button>
 		</li>
 	);
 };

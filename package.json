@@ -2,23 +2,24 @@
   "name": "next-simple-starter",
   "version": "1.0.0",
   "repository": {
-    "url": "https://github.com/ooade/NextSimpleStarter"
+    "url": "https://github.com/kenyk7/NextSimpleStarter"
   },
   "license": "MIT",
-  "dependencies": {
-    "express": "^4.16.2",
-    "next": "^4.2.1",
-    "next-redux-wrapper": "^1.3.4",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-redux": "^5.0.6",
-    "redux": "^3.7.2"
-  },
   "scripts": {
     "dev": "node server",
     "copy": "mkdir -p static/styles && cp .next/app.css static/styles/app.css",
     "build": "next build && npm run copy",
     "start": "NODE_ENV=production node server"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "express": "^4.16.2",
+    "next": "^4.2.3",
+    "next-redux-wrapper": "^1.3.5",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2"
   },
   "devDependencies": {
     "autoprefixer": "7.1.5",
