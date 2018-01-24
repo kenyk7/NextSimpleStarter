@@ -7,7 +7,7 @@ export default () => (
 				Welcome to Next simple starter
 			</h1>
 		  <p className="lead">
-		  	Discover the best events in the city!
+		  	Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 		  </p>
 		  <p className="lead">
 		  	<Link href="/blog">
