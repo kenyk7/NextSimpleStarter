@@ -9,7 +9,7 @@ const handle = app.getRequestHandler();
 const PORT = process.env.PORT || 3000;
 
 app.prepare().then(_ => {
-	const server = express();
+  const server = express();
 
   server.use('/_next/static', express.static(path.resolve('./.next/static')));
 
@@ -20,9 +20,9 @@ app.prepare().then(_ => {
     return handle(req, res);
   });
 
-	server.listen(PORT, err => {
-		if (err) throw err;
+  server.listen(PORT, err => {
+    if (err) throw err;
 
-		console.log(`> App running on port ${PORT}`);
-	});
+    console.log(`> App running on port ${PORT}`);
+  });
 });
